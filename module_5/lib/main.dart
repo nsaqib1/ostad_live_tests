@@ -21,6 +21,31 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Profile"),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.account_circle,
+              color: Colors.green,
+              size: 50,
+            ),
+            Text(
+              "John Doe",
+              style: TextStyle(fontSize: 24, color: Colors.green),
+            ),
+            Text(
+              "Flutter Batch 4",
+              style: TextStyle(fontSize: 18, color: Colors.blue),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
