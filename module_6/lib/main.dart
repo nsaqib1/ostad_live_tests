@@ -33,27 +33,82 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text("Home"),
+            leading: Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.red,
+            ),
+            title: Text(
+              "Home",
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.shop),
-            title: Text("Shop"),
+            leading: Icon(
+              Icons.shop,
+              size: 30,
+              color: Colors.green,
+            ),
+            title: Text(
+              "Shop",
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.apple),
-            title: Text("Apple"),
+            leading: Icon(
+              Icons.apple,
+              size: 30,
+              color: Colors.blue,
+            ),
+            title: Text(
+              "Apple",
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.star),
-            title: Text("Star"),
+            leading: Icon(
+              Icons.star,
+              size: 30,
+              color: Colors.indigo,
+            ),
+            title: Text(
+              "Star",
+              style: TextStyle(
+                color: Colors.indigo,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.sunny),
-            title: Text("Sunny"),
+            leading: Icon(
+              Icons.sunny,
+              size: 30,
+              color: Colors.amber,
+            ),
+            title: Text(
+              "Sunny",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
