@@ -37,12 +37,12 @@ class HomeScreen extends StatelessWidget {
         children: [
           ListTile(
             leading: Icon(
-              Icons.home,
+              Icons.shopping_bag,
               size: 30,
               color: Colors.red,
             ),
             title: Text(
-              "Home",
+              "Apple",
               style: TextStyle(
                 color: Colors.red,
                 fontSize: 20,
@@ -52,12 +52,12 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.shop,
+              Icons.shopping_bag,
               size: 30,
               color: Colors.green,
             ),
             title: Text(
-              "Shop",
+              "Banana",
               style: TextStyle(
                 color: Colors.green,
                 fontSize: 20,
@@ -67,12 +67,12 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.apple,
+              Icons.shopping_bag,
               size: 30,
               color: Colors.blue,
             ),
             title: Text(
-              "Apple",
+              "Orange",
               style: TextStyle(
                 color: Colors.blue,
                 fontSize: 20,
@@ -82,12 +82,12 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.star,
+              Icons.shopping_bag,
               size: 30,
               color: Colors.indigo,
             ),
             title: Text(
-              "Star",
+              "Water",
               style: TextStyle(
                 color: Colors.indigo,
                 fontSize: 20,
@@ -97,12 +97,12 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.sunny,
+              Icons.shopping_bag,
               size: 30,
               color: Colors.amber,
             ),
             title: Text(
-              "Sunny",
+              "Lemon",
               style: TextStyle(
                 color: Colors.amber,
                 fontSize: 20,
