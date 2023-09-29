@@ -43,6 +43,7 @@ class HomeScreen extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
+              itemCount: 10,
               itemBuilder: (context, index) => Card(
                 child: Image.network(
                   "https://via.placeholder.com/150",
