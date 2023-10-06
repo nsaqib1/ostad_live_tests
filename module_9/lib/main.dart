@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+        duration: const Duration(seconds: 1),
         content: Text(msg),
       ),
     );
@@ -44,16 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         title: const Text("Size Selector"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(2),
-        child: Center(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Wrap(
             spacing: 10,
             children: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 0 ? Colors.amber.shade700 : Colors.grey,
                 ),
                 onPressed: () => _handleClick(0, "S"),
                 child: const Text("S"),
@@ -61,42 +63,47 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 1 ? Colors.amber.shade700 : Colors.grey,
                 ),
-                onPressed: () => _handleClick(0, "S"),
-                child: Text("S"),
+                onPressed: () => _handleClick(1, "M"),
+                child: const Text("M"),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 2 ? Colors.amber.shade700 : Colors.grey,
                 ),
-                onPressed: () => _handleClick(0, "S"),
-                child: Text("S"),
+                onPressed: () => _handleClick(2, "L"),
+                child: const Text("L"),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 3 ? Colors.amber.shade700 : Colors.grey,
                 ),
-                onPressed: () => _handleClick(0, "S"),
-                child: Text("S"),
+                onPressed: () => _handleClick(3, "XL"),
+                child: const Text("XL"),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 4 ? Colors.amber.shade700 : Colors.grey,
                 ),
-                onPressed: () => _handleClick(0, "S"),
-                child: Text("S"),
+                onPressed: () => _handleClick(4, "XXL"),
+                child: const Text("XXL"),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
-                  backgroundColor: _index == 0 ? Colors.amber : Colors.grey,
+                  backgroundColor:
+                      _index == 5 ? Colors.amber.shade700 : Colors.grey,
                 ),
-                onPressed: () => _handleClick(0, "S"),
-                child: Text("S"),
+                onPressed: () => _handleClick(5, "XXXL"),
+                child: const Text("XXXL"),
               ),
             ],
           ),
