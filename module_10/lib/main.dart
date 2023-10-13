@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Module 10 Live Test',
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
@@ -34,6 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Item(title: "Item 5"),
     Item(title: "Item 6"),
   ];
+
+  int _count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,19 +46,49 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           final Item item = _list[index];
           return ListTile(
-            onTap: () => _selectItem(index, item),
+            onTap: () => _selectItem(index),
             tileColor: item.isSelected ? Theme.of(context).primaryColor : null,
             title: Text(item.title),
           );
         },
-        separatorBuilder: (context, index) => SizedBox(height: 10),
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
         itemCount: _list.length,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _showDialogue,
+        child: const Icon(Icons.check),
       ),
     );
   }
 
-  void _selectItem(int index, Item item) {
-    _list[index].isSelected = !_list[index].isSelected;
+  void _showDialogue() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Selected Items"),
+          content: Text("Number of Selected Items: $_count"),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Close"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _selectItem(int index) {
+    final Item item = _list[index];
+    item.isSelected = !item.isSelected;
+    if (_list[index].isSelected) {
+      _count++;
+    }
+    if (item.isSelected == false) {
+      _count--;
+    }
+
     setState(() {});
   }
 }
