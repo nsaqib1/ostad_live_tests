@@ -13,10 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Module 10 Live Test',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: const HomeScreen(),
     );
   }
@@ -30,13 +26,45 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Item> _list = [
+    Item(title: "Item 1"),
+    Item(title: "Item 2"),
+    Item(title: "Item 3"),
+    Item(title: "Item 4"),
+    Item(title: "Item 5"),
+    Item(title: "Item 6"),
+  ];
   @override
   Widget build(BuildContext context) {
-    DateFormat("hh:mm a dd-MM-yyyy").format(DateTime.now());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("data"),
+        title: const Text("Selection Screen"),
+      ),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(15),
+        itemBuilder: (context, index) {
+          final Item item = _list[index];
+          return ListTile(
+            onTap: () => _selectItem(index, item),
+            tileColor: item.isSelected ? Theme.of(context).primaryColor : null,
+            title: Text(item.title),
+          );
+        },
+        separatorBuilder: (context, index) => SizedBox(height: 10),
+        itemCount: _list.length,
       ),
     );
   }
+
+  void _selectItem(int index, Item item) {
+    _list[index].isSelected = !_list[index].isSelected;
+    setState(() {});
+  }
+}
+
+class Item {
+  final String title;
+  bool isSelected;
+
+  Item({required this.title, this.isSelected = false});
 }
