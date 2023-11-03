@@ -1,4 +1,4 @@
-final List<Map<String, dynamic>> data = [
+const data = '''[
   {
     "city": "New York",
     "temperature": 20,
@@ -34,4 +34,4 @@ final List<Map<String, dynamic>> data = [
     "humidity": 55,
     "windSpeed": 7.3
   }
-];
+]''';

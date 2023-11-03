@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:module_11/data.dart';
 import 'package:module_11/models/weather_model.dart';
@@ -11,11 +13,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<WeatherModel> _weathers = [];
+  final List<WeatherModel> _weathersData = [];
 
   getData() {
-    for (final weather in data) {
-      _weathers.add(WeatherModel.fromJson(weather));
+    for (final Map<String, dynamic> weather in jsonDecode(data)) {
+      _weathersData.add(WeatherModel.fromJson(weather));
     }
   }
 
@@ -34,10 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView.separated(
         padding: const EdgeInsets.all(10),
         itemBuilder: (context, index) {
-          return WeatherCard(weather: _weathers[index]);
+          return WeatherCard(weather: _weathersData[index]);
         },
         separatorBuilder: (context, index) => const SizedBox(height: 10),
-        itemCount: _weathers.length,
+        itemCount: _weathersData.length,
       ),
     );
   }
